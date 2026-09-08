@@ -796,237 +796,233 @@
 
   <div id="player-detail" style="display:none;">
 
+  <button class="back-button" onclick="backToTeam()">
+    ← 巨人のページに戻る
+  </button>
 
-    <button class="back-button" onclick="backToTeam()">
-      ← 巨人のページに戻る
-    </button>
+  <div class="card">
 
+    <div class="player-profile">
 
-    <div class="card">
+      <div class="player-photo">
+        <img id="player-photo"
+             src="https://placehold.co/200x250?text=Player"
+             alt="選手写真">
+      </div>
 
       <div class="player-header">
+        <h2 id="player-name">丸</h2>
 
-        <h2 id="player-name">
-          丸
-        </h2>
-
-        <div
-          class="player-position"
-          id="player-position">
+        <div class="player-position" id="player-position">
           巨人・外野手
         </div>
 
-      </div>
-
-
-      <!-- 基本成績 -->
-
-      <h2>
-        基本成績
-      </h2>
-
-
-      <div class="stats-grid">
-
-        <div class="stat-box">
-
-          <span class="stat-label">
-            打率
-          </span>
-
-          <span
-            class="stat-value"
-            id="player-avg">
-            .286
-          </span>
-
-        </div>
-
-
-        <div class="stat-box">
-
-          <span class="stat-label">
-            本塁打
-          </span>
-
-          <span
-            class="stat-value"
-            id="player-hr">
-            12
-          </span>
-
-        </div>
-
-
-        <div class="stat-box">
-
-          <span class="stat-label">
-            打点
-          </span>
-
-          <span
-            class="stat-value"
-            id="player-rbi">
-            48
-          </span>
-
-        </div>
-
-
-        <div class="stat-box">
-
-          <span class="stat-label">
-            OPS
-          </span>
-
-          <span
-            class="stat-value"
-            id="player-ops">
-            .743
-          </span>
-
-        </div>
-
+        <p class="player-profile-text">
+          プロ野球選手成績データ
+        </p>
       </div>
 
     </div>
-
-
-    <!-- 詳細打撃指標 -->
-
-    <div class="card">
-
-      <h2>
-        詳細打撃指標
-      </h2>
-
-
-      <table>
-
-        <tr>
-          <th>指標</th>
-          <th>数値</th>
-        </tr>
-
-
-        <tr>
-          <td>
-            wRC+
-          </td>
-
-          <td
-            class="stat-highlight"
-            id="player-wrc">
-            135
-          </td>
-        </tr>
-
-
-        <tr>
-          <td>
-            OBP
-          </td>
-
-          <td id="player-obp">
-            .367
-          </td>
-        </tr>
-
-
-        <tr>
-          <td>
-            SLG
-          </td>
-
-          <td id="player-slg">
-            .376
-          </td>
-        </tr>
-
-
-        <tr>
-          <td>
-            BB%
-          </td>
-
-          <td id="player-bb">
-            13.3%
-          </td>
-        </tr>
-
-
-        <tr>
-          <td>
-            K%
-          </td>
-
-          <td id="player-k">
-            18.4%
-          </td>
-        </tr>
-
-
-        <tr>
-          <td>
-            ISO
-          </td>
-
-          <td id="player-iso">
-            .106
-          </td>
-        </tr>
-
-
-        <tr>
-          <td>
-            得点圏打率
-          </td>
-
-          <td id="player-risp">
-            .250
-          </td>
-        </tr>
-
-      </table>
-
-    </div>
-
-
-    <!-- 今後追加 -->
-
-    <div class="card">
-
-      <h2>
-        今後追加予定
-      </h2>
-
-      <ul>
-
-        <li>打席数・打数</li>
-
-        <li>安打・二塁打・三塁打</li>
-
-        <li>盗塁・盗塁死</li>
-
-        <li>出塁率・長打率</li>
-
-        <li>WAR</li>
-
-        <li>月別成績</li>
-
-        <li>対右投手・対左投手</li>
-
-        <li>得点圏成績</li>
-
-        <li>年度別成績</li>
-
-      </ul>
-
-    </div>
-
 
   </div>
 
+
+  <!-- 基本情報 -->
+
+  <div class="card">
+
+    <h2>基本情報</h2>
+
+    <div class="stats-grid">
+
+      <div class="stat-box">
+        <span class="stat-label">守備位置</span>
+        <span class="stat-value" id="player-defense">
+          外野手
+        </span>
+      </div>
+
+      <div class="stat-box">
+        <span class="stat-label">打率</span>
+        <span class="stat-value" id="player-avg">
+          .286
+        </span>
+      </div>
+
+      <div class="stat-box">
+        <span class="stat-label">出塁率</span>
+        <span class="stat-value" id="player-obp">
+          .367
+        </span>
+      </div>
+
+      <div class="stat-box">
+        <span class="stat-label">長打率</span>
+        <span class="stat-value" id="player-slg">
+          .376
+        </span>
+      </div>
+
+      <div class="stat-box">
+        <span class="stat-label">OPS</span>
+        <span class="stat-value stat-highlight" id="player-ops">
+          .743
+        </span>
+      </div>
+
+      <div class="stat-box">
+        <span class="stat-label">wRC+</span>
+        <span class="stat-value stat-highlight" id="player-wrc">
+          135
+        </span>
+      </div>
+
+      <div class="stat-box">
+        <span class="stat-label">WAR</span>
+        <span class="stat-value stat-highlight" id="player-war">
+          3.2
+        </span>
+      </div>
+
+      <div class="stat-box">
+        <span class="stat-label">得点圏打率</span>
+        <span class="stat-value" id="player-risp">
+          .250
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- 打撃成績 -->
+
+  <div class="card">
+
+    <h2>打撃成績</h2>
+
+    <table>
+
+      <tr>
+        <th>打席</th>
+        <th>打数</th>
+        <th>安打</th>
+        <th>二塁打</th>
+        <th>三塁打</th>
+        <th>本塁打</th>
+      </tr>
+
+      <tr>
+        <td id="player-pa">420</td>
+        <td id="player-ab">380</td>
+        <td id="player-h">109</td>
+        <td id="player-2b">18</td>
+        <td id="player-3b">2</td>
+        <td id="player-hr">12</td>
+      </tr>
+
+    </table>
+
+    <br>
+
+    <table>
+
+      <tr>
+        <th>打点</th>
+        <th>盗塁</th>
+        <th>盗塁死</th>
+        <th>四球</th>
+        <th>三振</th>
+      </tr>
+
+      <tr>
+        <td id="player-rbi">48</td>
+        <td id="player-sb">6</td>
+        <td id="player-cs">2</td>
+        <td id="player-bb">55</td>
+        <td id="player-so">70</td>
+      </tr>
+
+    </table>
+
+  </div>
+
+
+  <!-- 詳細指標 -->
+
+  <div class="card">
+
+    <h2>詳細打撃指標</h2>
+
+    <table>
+
+      <tr>
+        <th>指標</th>
+        <th>数値</th>
+      </tr>
+
+      <tr>
+        <td>BB%</td>
+        <td id="player-bbp">13.3%</td>
+      </tr>
+
+      <tr>
+        <td>K%</td>
+        <td id="player-kp">18.4%</td>
+      </tr>
+
+      <tr>
+        <td>ISO</td>
+        <td id="player-iso">.106</td>
+      </tr>
+
+      <tr>
+        <td>wRC+</td>
+        <td class="stat-highlight" id="player-wrc2">
+          135
+        </td>
+      </tr>
+
+      <tr>
+        <td>WAR</td>
+        <td class="stat-highlight" id="player-war2">
+          3.2
+        </td>
+      </tr>
+
+      <tr>
+        <td>得点圏打率</td>
+        <td id="player-risp2">.250</td>
+      </tr>
+
+    </table>
+
+  </div>
+
+
+  <!-- 今後追加 -->
+
+  <div class="card">
+
+    <h2>今後追加予定</h2>
+
+    <ul>
+      <li>年度別成績</li>
+      <li>月別成績</li>
+      <li>対右投手・対左投手</li>
+      <li>球場別成績</li>
+      <li>守備成績</li>
+      <li>守備位置別成績</li>
+      <li>打球方向</li>
+      <li>打球速度</li>
+      <li>得点圏成績</li>
+      <li>選手ランキング</li>
+    </ul>
+
+  </div>
+
+</div>
 
 </main>
 
