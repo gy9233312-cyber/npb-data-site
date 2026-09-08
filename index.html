@@ -118,6 +118,10 @@
       background: #f3f4f6;
     }
 
+    tr:hover {
+      background: #f9fafb;
+    }
+
     .notice {
       color: #666;
       font-size: 14px;
@@ -149,6 +153,19 @@
       margin-bottom: 25px;
     }
 
+    .player-name {
+      font-weight: bold;
+    }
+
+    .stat-highlight {
+      font-weight: bold;
+      color: #2563eb;
+    }
+
+    .sub-title {
+      margin-top: 30px;
+    }
+
     @media (max-width: 700px) {
       .teams {
         grid-template-columns: repeat(2, 1fr);
@@ -162,6 +179,14 @@
       header h1 {
         font-size: 25px;
       }
+
+      table {
+        font-size: 13px;
+      }
+
+      th, td {
+        padding: 9px 4px;
+      }
     }
   </style>
 </head>
@@ -173,64 +198,119 @@
   <p>NPB選手・チーム成績データ</p>
 </header>
 
+
 <nav>
   <a href="#" onclick="showHome()">ホーム</a>
-  <a href="#">選手</a>
+  <a href="#" onclick="showHome()">選手</a>
   <a href="#" onclick="showHome()">チーム</a>
-  <a href="#">ランキング</a>
+  <a href="#" onclick="showHome()">ランキング</a>
 </nav>
+
 
 <main>
 
-  <!-- ホーム画面 -->
+  <!-- =========================
+       ホーム画面
+  ========================== -->
+
   <div id="home">
 
     <div class="card">
+
       <h2>今日のプロ野球</h2>
+
       <p class="notice">
         試合情報は今後追加します。
       </p>
+
     </div>
 
+
     <div class="card">
+
       <h2>12球団</h2>
 
+
       <div class="league">
+
         <h3>セ・リーグ</h3>
 
         <div class="teams">
 
-          <div class="team" onclick="showTeam('巨人')">巨人</div>
-          <div class="team" onclick="showTeam('阪神')">阪神</div>
-          <div class="team" onclick="showTeam('DeNA')">DeNA</div>
-          <div class="team" onclick="showTeam('広島')">広島</div>
-          <div class="team" onclick="showTeam('ヤクルト')">ヤクルト</div>
-          <div class="team" onclick="showTeam('中日')">中日</div>
+          <div class="team" onclick="showTeam('巨人')">
+            巨人
+          </div>
+
+          <div class="team" onclick="showTeam('阪神')">
+            阪神
+          </div>
+
+          <div class="team" onclick="showTeam('DeNA')">
+            DeNA
+          </div>
+
+          <div class="team" onclick="showTeam('広島')">
+            広島
+          </div>
+
+          <div class="team" onclick="showTeam('ヤクルト')">
+            ヤクルト
+          </div>
+
+          <div class="team" onclick="showTeam('中日')">
+            中日
+          </div>
 
         </div>
+
       </div>
 
+
       <div class="league">
+
         <h3>パ・リーグ</h3>
 
         <div class="teams">
 
-          <div class="team" onclick="showTeam('ソフトバンク')">ソフトバンク</div>
-          <div class="team" onclick="showTeam('日本ハム')">日本ハム</div>
-          <div class="team" onclick="showTeam('ロッテ')">ロッテ</div>
-          <div class="team" onclick="showTeam('楽天')">楽天</div>
-          <div class="team" onclick="showTeam('オリックス')">オリックス</div>
-          <div class="team" onclick="showTeam('西武')">西武</div>
+          <div class="team" onclick="showTeam('ソフトバンク')">
+            ソフトバンク
+          </div>
+
+          <div class="team" onclick="showTeam('日本ハム')">
+            日本ハム
+          </div>
+
+          <div class="team" onclick="showTeam('ロッテ')">
+            ロッテ
+          </div>
+
+          <div class="team" onclick="showTeam('楽天')">
+            楽天
+          </div>
+
+          <div class="team" onclick="showTeam('オリックス')">
+            オリックス
+          </div>
+
+          <div class="team" onclick="showTeam('西武')">
+            西武
+          </div>
 
         </div>
+
       </div>
 
     </div>
 
+
+    <!-- セリーグ順位 -->
+
     <div class="card">
+
       <h2>セ・リーグ順位表</h2>
 
       <table>
+
         <tr>
           <th>順位</th>
           <th>チーム</th>
@@ -288,12 +368,18 @@
         </tr>
 
       </table>
+
     </div>
 
+
+    <!-- 打撃ランキング -->
+
     <div class="card">
+
       <h2>打撃ランキング</h2>
 
       <table>
+
         <tr>
           <th>順位</th>
           <th>選手</th>
@@ -335,17 +421,22 @@
       <p class="notice">
         ※選手データは今後追加します。
       </p>
+
     </div>
 
   </div>
 
 
-  <!-- チーム詳細画面 -->
+  <!-- =========================
+       チーム詳細画面
+  ========================== -->
+
   <div id="team-detail" style="display:none;">
 
     <button class="back-button" onclick="showHome()">
       ← ホームに戻る
     </button>
+
 
     <div class="card">
 
@@ -357,9 +448,11 @@
         チーム情報・選手成績
       </p>
 
+
       <h2>チーム成績</h2>
 
       <table>
+
         <tr>
           <th>試合</th>
           <th>勝</th>
@@ -377,83 +470,224 @@
           <td>---</td>
           <td>---</td>
         </tr>
+
       </table>
 
     </div>
 
 
-    <div class="card">
+    <!-- =========================
+         巨人 野手
+    ========================== -->
 
-      <h2>野手成績</h2>
+    <div class="card" id="giants-batters">
+
+      <h2>巨人 野手成績</h2>
 
       <table>
+
         <tr>
           <th>選手</th>
           <th>打率</th>
           <th>本塁打</th>
           <th>打点</th>
           <th>OPS</th>
+          <th>wRC+</th>
         </tr>
 
-        <tr>
-          <td>---</td>
-          <td>---</td>
-          <td>---</td>
-          <td>---</td>
-          <td>---</td>
-        </tr>
 
         <tr>
-          <td>---</td>
-          <td>---</td>
-          <td>---</td>
-          <td>---</td>
-          <td>---</td>
+          <td class="player-name">
+            丸
+          </td>
+
+          <td>
+            .286
+          </td>
+
+          <td>
+            12
+          </td>
+
+          <td>
+            48
+          </td>
+
+          <td class="stat-highlight">
+            .743
+          </td>
+
+          <td class="stat-highlight">
+            135
+          </td>
         </tr>
 
+
         <tr>
-          <td>---</td>
-          <td>---</td>
-          <td>---</td>
-          <td>---</td>
-          <td>---</td>
+          <td class="player-name">
+            吉川
+          </td>
+
+          <td>
+            .298
+          </td>
+
+          <td>
+            8
+          </td>
+
+          <td>
+            42
+          </td>
+
+          <td class="stat-highlight">
+            .727
+          </td>
+
+          <td class="stat-highlight">
+            132
+          </td>
+        </tr>
+
+
+        <tr>
+          <td class="player-name">
+            泉口
+          </td>
+
+          <td>
+            .275
+          </td>
+
+          <td>
+            5
+          </td>
+
+          <td>
+            31
+          </td>
+
+          <td class="stat-highlight">
+            .707
+          </td>
+
+          <td class="stat-highlight">
+            125
+          </td>
         </tr>
 
       </table>
 
+      <p class="notice">
+        ※現在はサンプルデータです。
+      </p>
+
     </div>
 
 
-    <div class="card">
+    <!-- =========================
+         巨人 投手
+    ========================== -->
 
-      <h2>投手成績</h2>
+    <div class="card" id="giants-pitchers">
+
+      <h2>巨人 投手成績</h2>
 
       <table>
+
         <tr>
           <th>選手</th>
           <th>防御率</th>
           <th>勝</th>
           <th>敗</th>
           <th>奪三振</th>
+          <th>WHIP</th>
         </tr>
 
-        <tr>
-          <td>---</td>
-          <td>---</td>
-          <td>---</td>
-          <td>---</td>
-          <td>---</td>
-        </tr>
 
         <tr>
-          <td>---</td>
-          <td>---</td>
-          <td>---</td>
-          <td>---</td>
-          <td>---</td>
+          <td class="player-name">
+            戸郷
+          </td>
+
+          <td class="stat-highlight">
+            2.45
+          </td>
+
+          <td>
+            8
+          </td>
+
+          <td>
+            4
+          </td>
+
+          <td>
+            96
+          </td>
+
+          <td>
+            1.08
+          </td>
+        </tr>
+
+
+        <tr>
+          <td class="player-name">
+            山﨑
+          </td>
+
+          <td class="stat-highlight">
+            2.78
+          </td>
+
+          <td>
+            7
+          </td>
+
+          <td>
+            5
+          </td>
+
+          <td>
+            82
+          </td>
+
+          <td>
+            1.12
+          </td>
         </tr>
 
       </table>
+
+      <p class="notice">
+        ※現在はサンプルデータです。
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         今後追加するデータ
+    ========================== -->
+
+    <div class="card">
+
+      <h2>今後追加予定</h2>
+
+      <ul>
+
+        <li>選手個人ページ</li>
+        <li>打率ランキング</li>
+        <li>本塁打ランキング</li>
+        <li>OPSランキング</li>
+        <li>wRC+ランキング</li>
+        <li>WARランキング</li>
+        <li>投手ランキング</li>
+        <li>チーム順位</li>
+        <li>試合結果</li>
+
+      </ul>
 
     </div>
 
@@ -477,7 +711,27 @@
 
     document.getElementById("team-title").textContent = teamName;
 
+    /*
+      巨人以外はまだデータを入れていないため、
+      「データ準備中」と表示する
+    */
+
+    if (teamName === "巨人") {
+
+      document.getElementById("giants-batters").style.display = "block";
+
+      document.getElementById("giants-pitchers").style.display = "block";
+
+    } else {
+
+      document.getElementById("giants-batters").style.display = "none";
+
+      document.getElementById("giants-pitchers").style.display = "none";
+
+    }
+
     window.scrollTo(0, 0);
+
   }
 
 
@@ -488,9 +742,11 @@
     document.getElementById("home").style.display = "block";
 
     window.scrollTo(0, 0);
+
   }
 
 </script>
+
 
 </body>
 </html>
