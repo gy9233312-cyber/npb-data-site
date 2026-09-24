@@ -241,6 +241,48 @@
       }
 
     }
+    .player-profile {
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
+
+.player-photo {
+  width:200px;
+  flex-shrink:0;
+}
+
+.player-photo img {
+  width:200px;
+  height:250px;
+  object-fit:cover;
+  border-radius:12px;
+  border:1px solid #ddd;
+  background:#f3f4f6;
+}
+
+.player-profile-text {
+  color:#666;
+  margin-top:10px;
+}
+
+@media(max-width:700px) {
+
+  .player-profile {
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .player-photo {
+    width:160px;
+  }
+
+  .player-photo img {
+    width:160px;
+    height:200px;
+  }
+
+}
   </style>
 </head>
 
