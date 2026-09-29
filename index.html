@@ -1292,74 +1292,161 @@ function showTeam(teamName) {
 
 function showPlayer(playerName) {
 
+  // 選手データを取得
   const player = players[playerName];
 
+  // データが存在しなければ何もしない
   if (!player) {
     return;
   }
 
 
+  // ホームページを隠す
   document.getElementById("home").style.display = "none";
 
+  // チームページを隠す
   document.getElementById("team-detail").style.display = "none";
 
+  // 選手個人ページを表示
   document.getElementById("player-detail").style.display = "block";
 
 
+  // 選手名
   document.getElementById("player-name").textContent =
     player.name;
 
 
+  // 所属チーム・守備位置
   document.getElementById("player-position").textContent =
     player.position;
 
 
+  // 守備位置
+  document.getElementById("player-defense").textContent =
+    player.defense;
+
+
+  // 顔写真
+  document.getElementById("player-photo").src =
+    player.photo;
+
+
+  // 打率
   document.getElementById("player-avg").textContent =
     player.avg;
 
 
+  // 打席数
+  document.getElementById("player-pa").textContent =
+    player.pa;
+
+
+  // 打数
+  document.getElementById("player-ab").textContent =
+    player.ab;
+
+
+  // 安打
+  document.getElementById("player-h").textContent =
+    player.h;
+
+
+  // 二塁打
+  document.getElementById("player-2b").textContent =
+    player.twoB;
+
+
+  // 三塁打
+  document.getElementById("player-3b").textContent =
+    player.threeB;
+
+
+  // 本塁打
   document.getElementById("player-hr").textContent =
     player.hr;
 
 
+  // 打点
   document.getElementById("player-rbi").textContent =
     player.rbi;
 
 
-  document.getElementById("player-ops").textContent =
-    player.ops;
+  // 盗塁
+  document.getElementById("player-sb").textContent =
+    player.sb;
 
 
-  document.getElementById("player-wrc").textContent =
-    player.wrc;
+  // 盗塁死
+  document.getElementById("player-cs").textContent =
+    player.cs;
 
 
-  document.getElementById("player-obp").textContent =
-    player.obp;
-
-
-  document.getElementById("player-slg").textContent =
-    player.slg;
-
-
+  // 四球
   document.getElementById("player-bb").textContent =
     player.bb;
 
 
-  document.getElementById("player-k").textContent =
-    player.k;
+  // 三振
+  document.getElementById("player-so").textContent =
+    player.so;
 
 
+  // 出塁率
+  document.getElementById("player-obp").textContent =
+    player.obp;
+
+
+  // 長打率
+  document.getElementById("player-slg").textContent =
+    player.slg;
+
+
+  // OPS
+  document.getElementById("player-ops").textContent =
+    player.ops;
+
+
+  // BB%
+  document.getElementById("player-bbp").textContent =
+    player.bbp;
+
+
+  // K%
+  document.getElementById("player-kp").textContent =
+    player.kp;
+
+
+  // ISO
   document.getElementById("player-iso").textContent =
     player.iso;
 
 
+  // wRC+
+  document.getElementById("player-wrc").textContent =
+    player.wrc;
+
+  document.getElementById("player-wrc2").textContent =
+    player.wrc;
+
+
+  // WAR
+  document.getElementById("player-war").textContent =
+    player.war;
+
+  document.getElementById("player-war2").textContent =
+    player.war;
+
+
+  // 得点圏打率
   document.getElementById("player-risp").textContent =
     player.risp;
 
+  document.getElementById("player-risp2").textContent =
+    player.risp;
 
+
+  // ページの一番上へ移動
   window.scrollTo(0, 0);
-
 }
 
 
